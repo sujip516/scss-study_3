@@ -1,0 +1,73 @@
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: $mainColor;
+  background-color: $mainColor;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  gap: 1px;
+  & > *:not(script) {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  .menu {
+    grid-column-start: -2;
+  }
+  .main-image {
+    grid-column: 2 /-2;
+    grid-row: 2 /-2;
+    img {
+      width: 100%;
+    }
+  }
+  .number-row {
+    background-color: $mainColor;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    align-items: stretch;
+    .number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      cursor: pointer;
+      transition: color 0.3s linear, background-color 0.3s linear;
+      &:hover {
+        background-color: $mainColor;
+        color: white;
+      }
+    }
+  }
+  .footer_text {
+    grid-column-start: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      animation: footerText 10s linear infinite;
+    }
+  }
+}
+
+@keyframes footerText {
+  from {
+    transform: translateX(400px);
+  }
+  to {
+    transform: translateX(-400px);
+  }
+  from {
+    transform: translateX(400px);
+  }
+}
